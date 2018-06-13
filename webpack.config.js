@@ -7,16 +7,33 @@ export default {
     },
     modules:{
         rules:[
+            {
+                test:/(js|jsx)$/,
+                exclude:/node_modules/,
+                use: [
+                    'babel-loader'                    
+                ] 
+
+            },
+
          {
-            test:/\.ccs$/,
+            test:/\.sccs$/,
             use:[
                 'style-loader',
-                'css-loader'
+                'css-loader',
+                'sass-loader'
             ]
-         }
+         },{
+             test: /\.(png|svg|jpg|gif)$/,
+             use: [
+                    'file-loader'                       
+                ]
+            }
         ]  
-
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+      },
     mode:  'development'
 
 }
