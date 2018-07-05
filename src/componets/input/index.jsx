@@ -8,9 +8,10 @@ export class InputField extends Component {
      constructor(props) {
          super(props)
          this.state={value:''}
+         this.handlerChange=this.handlerChange.bind(this)
 
      }
-     handlerChange=(e)=> {
+     handlerChange (e){
        const {name, value}=e.target
        this.setState({[name]:value})
      }
