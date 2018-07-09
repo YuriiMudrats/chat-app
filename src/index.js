@@ -1,13 +1,6 @@
-import './main.css'
-import {App} from './App'
-import React from "react"
-import {render} from 'react-dom'
+import "./main.scss";
+import { App } from "./App";
+import React from "react";
+import { render } from "react-dom";
 
-
-
-
-
-render(
-    <App/>,
-    document.getElementById('root')
-  )
+render(<App />, document.getElementById("root"));
