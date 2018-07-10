@@ -1,23 +1,16 @@
-import React, { Component } from "react";
-export class InputField extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+import React from "react";
+import TextField from "material-ui/TextField";
+export default class InputField extends React.PureComponent {
   render() {
-    const { name, type, value, handlerChange, labelName } = this.props;
+    const { input, label, helpertext, ...custom } = this.props;
     return (
       <div>
-        <label>
-          {labelName}
-          <input
-            name={name}
-            type={type}
-            value={value}
-            onChange={e => handlerChange(e)}
-          />
-        </label>
-        <span>{value}</span>
+        <TextField
+          helpertext={helpertext}
+          placeholder={label}
+          {...input}
+          {...custom}
+        />
       </div>
     );
   }
