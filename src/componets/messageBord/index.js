@@ -15,7 +15,7 @@ export default class MessageBord extends Component {
       ));
       return text;
     }
-    return null;
+    return false;
   }
 
   render() {

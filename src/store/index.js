@@ -9,4 +9,4 @@ export const store = createStore(
   rootReduser,
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
-// sagaMiddleware.run(rootSagas);
+sagaMiddleware.run(rootSagas);

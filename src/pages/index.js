@@ -1,33 +1,23 @@
 import React, { Component } from "react";
-import io from "socket.io-client";
+import { sendMessage } from "../store/actions";
 import { connect } from "react-redux";
-import FieldButton from "../componets/button";
 import MessageBord from "../componets/messageBord";
-import { config } from "../../server/config";
-
 import MessageField from "./inputField";
-const socket = io.connect(`http://localhost:${config.port}`);
 
 class ChatPage extends Component {
   constructor(props) {
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onSend = this.onSend.bind(this);
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    const { message, name } = this.state;
-    socket.emit("chat", { name, message });
-    socket.on("chat", data => {
-      this.setState({ chatMessage: this.state.chatMessage.concat(data) });
-    });
+  onSend(values) {
+    this.props.sendMessage(values);
   }
   render() {
     return (
-      <div className="container">
+      <div className="chat-page">
         <div className="send-panel">
-          <MessageField />
-          <FieldButton name={"Send Message"} />
+          <MessageField onSubmit={this.onSend} />
         </div>
         <div className="chat-window">
           <MessageBord messages={{ name: "4", message: "3" }} />
@@ -37,4 +27,11 @@ class ChatPage extends Component {
   }
 }
 
-export default ChatPage;
+const mapDispatchToProps = {
+  sendMessage
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ChatPage);

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputField from "../../componets/input";
+import FieldButton from "../../componets/button";
 import { Field, reduxForm } from "redux-form";
 
 class InputForm extends Component {
@@ -20,13 +21,14 @@ class InputForm extends Component {
             name={"message"}
             type={"text"}
           />
+          <FieldButton name={"Send Message"} />
         </div>
       </form>
     );
   }
 }
 const MessageField = reduxForm({
-  form: "logForm"
+  form: "UserMessage"
 })(InputForm);
 
 export default MessageField;

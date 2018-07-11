@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import page from "./page";
+import { pageState } from "./page";
 import { reducer as formReducer } from "redux-form";
-const rootReduser = combineReducers({ page, form: formReducer });
+const rootReduser = combineReducers({ pageState, form: formReducer });
 
 export default rootReduser;

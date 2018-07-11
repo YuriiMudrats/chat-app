@@ -9,6 +9,7 @@ export default class FieldButton extends React.PureComponent {
         variant="outlined"
         size="medium"
         color="primary"
+        type="submit"
         className={className}
       >
         {name}

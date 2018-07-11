@@ -1,5 +1,9 @@
 {
-    "presets": ["env","react","flow"],
-        "plugins": ["transform-class-properties","syntax-class-properties","transform-object-rest-spread"]
-    
-  }
+  "presets": ["env", "react", "stage-0", "flow"],
+  "plugins": [
+    "transform-runtime",
+    "transform-class-properties",
+    "syntax-class-properties",
+    "transform-object-rest-spread"
+  ]
+}
