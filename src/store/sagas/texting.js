@@ -1,7 +1,9 @@
 import { call, put, take } from "redux-saga/effects";
 import { eventChannel } from "redux-saga";
 import io from "socket.io-client";
+
 import { config } from "../../../server/config";
+
 const socket = io.connect(`http://localhost:${config.port}`);
 
 function featchMessage(soketname, data) {

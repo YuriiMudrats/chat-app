@@ -1,12 +1,13 @@
-.chat-window {
-  width: 300px;
+.chat__window {
+  width: 450px;
   border: 2px solid black;
   height: 500px;
   float: right;
   background-color: gray;
   opacity: 0.8;
   border-radius: 10px;
+  overflow: scroll;
 }
-.send-panel {
+.send__panel {
   float: left;
 }

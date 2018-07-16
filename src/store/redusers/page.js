@@ -1,6 +1,8 @@
-import { getMessage } from "../actions";
 import { handleActions } from "redux-actions";
 import { Record } from "immutable";
+
+import { getMessage } from "../actions";
+
 let initialState = Record({
   messages: []
 });

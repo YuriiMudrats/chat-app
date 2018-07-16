@@ -9,13 +9,12 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         exclude: [path.resolve(__dirname, "node_modules")],
         include: [path.join(__dirname, "src"), path.join(__dirname, "server")],
         use: [
           {
-            loader: "babel-loader",
-            options: { presets: ["env", "react"] }
+            loader: "babel-loader"
           }
         ]
       },

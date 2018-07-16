@@ -1,0 +1,14 @@
+.message__list {
+  list-style-type: none;
+  border-bottom: 0.5px solid black;
+}
+.messages {
+  margin: 0px;
+  padding: 15px;
+}
+img.message__user__avatar {
+  padding-right: 10px;
+  float: left;
+  width: 50px;
+  height: 50px;
+}

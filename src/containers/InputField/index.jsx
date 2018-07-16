@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import { Field, reduxForm } from "redux-form";
+
 import Input from "../../componets/Input";
 import FieldButton from "../../componets/Button";
-import { Field, reduxForm } from "redux-form";
+
 import "./style.scss";
+
 class InputForm extends Component {
   render() {
     const { handleSubmit } = this.props;
