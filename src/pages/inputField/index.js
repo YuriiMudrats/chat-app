@@ -1,25 +1,27 @@
-import React, { PureComponent } from "react";
-import InputField from "../../componets/Input";
+import React, { Component } from "react";
+import Input from "../../componets/Input";
 import FieldButton from "../../componets/Button";
 import { Field, reduxForm } from "redux-form";
-
-class InputForm extends PureComponent {
+import "./style.scss";
+class InputForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit}>
         <div className="input-field">
           <Field
-            component={InputField}
+            component={Input}
             label="UserName"
             name={"name"}
             type={"text"}
+            uniqName="chat_name"
           />
           <Field
-            component={InputField}
+            component={Input}
             label="Message"
             name={"message"}
             type={"text"}
+            uniqName="chat_message"
           />
           <FieldButton name={"Send Message"} />
         </div>
@@ -27,8 +29,8 @@ class InputForm extends PureComponent {
     );
   }
 }
-const MessageField = reduxForm({
+const InputField = reduxForm({
   form: "UserMessage"
 })(InputForm);
 
-export default MessageField;
+export default InputField;

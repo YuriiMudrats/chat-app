@@ -1,8 +1,8 @@
-import React, { PureComponen } from "react";
+import React, { Component } from "react";
 import ChatPage from "./pages";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
-export default class App extends PureComponen {
+export default class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
