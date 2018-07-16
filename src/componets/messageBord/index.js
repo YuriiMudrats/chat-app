@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent, Component } from "react";
 
 export default class MessageBord extends Component {
   constructor(props) {
     super(props);
   }
-
   textMessage(listMessages) {
     if (listMessages.length) {
       let text = listMessages.map((message, i) => (
@@ -20,6 +19,6 @@ export default class MessageBord extends Component {
 
   render() {
     const { messages } = this.props;
-    return <ul style={{ float: "rigth" }}>{this.textMessage(messages)}</ul>;
+    return <ul className="message__list">{this.textMessage(messages)}</ul>;
   }
 }

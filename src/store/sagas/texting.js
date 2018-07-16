@@ -10,7 +10,7 @@ function featchMessage(soketname, data) {
 function subsciber(socket) {
   return eventChannel(emit => {
     socket.on("chat", data => {
-      emit(console.log(data));
+      emit(console.log(data, "emit"));
     });
     return () => {};
   });
@@ -20,9 +20,10 @@ export function* setMessage({ payload }) {
   try {
     yield call(featchMessage, "chat", payload);
     const channel = yield call(subsciber, socket);
+    console.log(channel, "channele");
     while (true) {
       let action = yield take(channel);
-      console.log(action);
+      console.log(action, "action");
       yield put(action);
     }
   } catch (error) {

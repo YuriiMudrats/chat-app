@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import InputField from "../../componets/input";
-import FieldButton from "../../componets/button";
+import React, { PureComponent } from "react";
+import InputField from "../../componets/Input";
+import FieldButton from "../../componets/Button";
 import { Field, reduxForm } from "redux-form";
 
-class InputForm extends Component {
+class InputForm extends PureComponent {
   render() {
     const { handleSubmit } = this.props;
     return (

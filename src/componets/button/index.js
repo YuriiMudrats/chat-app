@@ -1,7 +1,7 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import Button from "@material-ui/core/Button";
 
-export default class FieldButton extends React.PureComponent {
+export default class FieldButton extends PureComponent {
   render() {
     const { className, name } = this.props;
     return (
